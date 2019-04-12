@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Táo</title>
+</head>
+<body>
+<script>
+    function Apple() {
+        this.weight = function (weight){
+            this.weight = weight;
+        };
+        this.decrease = function () {
+            return this.weight--;
+        };
+        this.getWeight = function () {
+            alert(this.weight);
+        };
+    }
+
+    function Human(weight) {
+        //this.name = name;
+        //this.gender = gender;
+        this.weight = weight;
+        this.getApple = function (apple) {
+            this.apple = apple;
+        };
+        this.checkApple = function () {
+            this.apple.getWeight();
+        };
+        this.eatApple = function () {
+            if (this.apple.weight > 0) {
+                this.apple.decrease();
+                this.weight++;
+            } else alert('Da het tao de an roi');
+        };
+        this.say = function () {
+            alert('say something');
+        };
+    }
+
+    let tao = new Apple();
+    tao.weight(2);
+    let Adam = new Human(50);
+    Adam.getApple(tao);
+    Adam.checkApple();
+    Adam.eatApple();
+    alert(Adam.weight);
+
+    let Eva = new Human(40);
+    Eva.getApple(tao);
+    Eva.eatApple();
+    alert(Eva.weight);
+
+
+</script>
+</body>
+</html>
